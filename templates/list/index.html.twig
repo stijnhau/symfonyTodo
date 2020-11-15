@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}list!{% endblock %}
+
+{% block body %}
+    <table>
+        <th>Name</th><th>Completed at</th><th><a href="{{ path('app_add') }}">+</th>
+        {% for task in tasks %}
+            <tr><td>{{ task.name }}</td><td>{{ task.completedAt }}</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
